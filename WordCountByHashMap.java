@@ -5,12 +5,12 @@ public class WordCountByHashMap {
 
   public static Map<String, Integer> countWords(String input) {
     Map<String, Integer> wordCounts = new HashMap<>();
-    String[] words = input.split("\\s+"); // Split by whitespace
+    String[] words = input.split("\\s+"); 
 
     for (String word : words) {
       word = word.toLowerCase(); // Convert to lowercase for case-insensitive counting
-      int count = wordCounts.getOrDefault(word, 0); // Get existing count or default to 0
-      wordCounts.put(word, count + 1); // Update count
+      int count = wordCounts.getOrDefault(word, 0);
+      wordCounts.put(word, count + 1); 
     }
 
     return wordCounts;
