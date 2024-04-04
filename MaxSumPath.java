@@ -2,7 +2,7 @@ public class MaxSumPath {
 
   public static int findMaxSumPath(int[] X, int[] Y) {
     int sum = 0;
-    int sumX = 0, sumY = 0; // Stores sum of elements from each array until a common element
+    int sumX = 0, sumY = 0; 
     int m = X.length, n = Y.length;
     int i = 0, j = 0;
 
@@ -11,22 +11,22 @@ public class MaxSumPath {
       while (i < m - 1 && X[i] == X[i + 1]) {
         sumX += X[i++];
       }
-      // Handle duplicates in Y
+     
       while (j < n - 1 && Y[j] == Y[j + 1]) {
         sumY += Y[j++];
       }
 
-      // If current element in Y is smaller, add it to sumY and move j
+     
       if (Y[j] < X[i]) {
         sumY += Y[j];
         j++;
-      // If current element in X is smaller, add it to sumX and move i
+     
       } else if (X[i] < Y[j]) {
         sumX += X[i];
         i++;
-      // If common element found, update sum with max(sumX, sumY) and add common element
+     
       } else {
-        sum += Math.max(sumX, sumY) + X[i]; // Use X[i] as both arrays have the same element at this point
+        sum += Math.max(sumX, sumY) + X[i]; 
         i++;
         j++;
         sumX = 0;
